@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frisia Pensioenadvies – Pensioenregeling goed geregeld</title>
+  <meta name="description" content="No-nonsens, toekomstgericht en helder pensioenadvies voor werkgevers in heel Nederland. Frisia helpt bij het opzetten, verbeteren en beheren van pensioenregelingen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #103366;
+      --blue: #3299cc;
+      --lime: #d6e264;
+      --cream: #ecece4;
+      --white: #ffffff;
+      --gradient: linear-gradient(135deg, #3299cc, #103366);
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: #333;
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid rgba(16, 51, 102, 0.08);
+      transition: box-shadow 0.3s;
+    }
+
+    .header.scrolled {
+      box-shadow: 0 2px 20px rgba(16, 51, 102, 0.1);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 52px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    nav a {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blue);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: #0c2850;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(16, 51, 102, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+
+    .btn-secondary:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-lime {
+      background: var(--lime);
+      color: var(--navy);
+    }
+
+    .btn-lime:hover {
+      background: #c8d45a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(214, 226, 100, 0.4);
+    }
+
+    .btn-large {
+      padding: 16px 36px;
+      font-size: 16px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 140px 24px 80px;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C360,80 720,0 1440,40 L1440,80 L0,80 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center bottom;
+      background-size: cover;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 48px;
+      letter-spacing: 1px;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero-content .subtitle {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--blue);
+      margin-bottom: 24px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+
+    .hero-content .cta-area {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .trust-badges {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .trust-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--lime);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(16, 51, 102, 0.15);
+    }
+
+    /* ── SECTION DEFAULTS ── */
+    section {
+      padding: 80px 24px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 36px;
+      letter-spacing: 1px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: #666;
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    /* ── PROBLEEM & OPLOSSING ── */
+    .problem-section {
+      background: var(--white);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .problem-card, .solution-card {
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .problem-card {
+      background: #f8f8f5;
+      border-left: 4px solid var(--blue);
+    }
+
+    .solution-card {
+      background: var(--cream);
+      border-left: 4px solid var(--lime);
+    }
+
+    .problem-card h3, .solution-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .problem-card p, .solution-card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ── DIENSTEN ── */
+    .diensten-section {
+      background: var(--cream);
+      position: relative;
+    }
+
+    .diensten-section::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C360,0 720,80 1440,40 L1440,0 L0,0 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center top;
+      background-size: cover;
+    }
+
+    .diensten-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .dienst-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 36px;
+      transition: all 0.3s;
+      border: 1px solid rgba(16, 51, 102, 0.06);
+    }
+
+    .dienst-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(16, 51, 102, 0.1);
+    }
+
+    .dienst-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .dienst-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .dienst-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .dienst-card p {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ── AANPAK ── */
+    .aanpak-section {
+      background: var(--white);
+    }
+
+    .aanpak-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .aanpak-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .aanpak-step::after {
+      content: '';
+      position: absolute;
+      top: 36px;
+      right: -16px;
+      width: 32px;
+      height: 2px;
+      background: var(--blue);
+      opacity: 0.3;
+    }
+
+    .aanpak-step:last-child::after {
+      display: none;
+    }
+
+    .step-number {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      background: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 28px;
+      color: var(--navy);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .aanpak-step:hover .step-number {
+      border-color: var(--blue);
+      background: var(--white);
+    }
+
+    .aanpak-step h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .aanpak-step p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ── WAAROM FRISIA ── */
+    .waarom-section {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+    }
+
+    .waarom-section .section-title {
+      color: var(--white);
+    }
+
+    .waarom-section .section-subtitle {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .waarom-section .section-label {
+      color: var(--lime);
+    }
+
+    .waarom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .waarom-usps {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .usp-item {
+      display: flex;
+      gap: 20px;
+    }
+
+    .usp-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(50, 153, 204, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .usp-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .usp-item h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .usp-item p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    .waarom-facts {
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fact-item:last-child {
+      border-bottom: none;
+    }
+
+    .fact-check {
+      width: 32px;
+      height: 32px;
+      background: rgba(214, 226, 100, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fact-check svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .fact-item span {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── CONVERSIEBLOK ── */
+    .contact-section {
+      background: var(--cream);
+      position: relative;
+    }
+
+    .contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-text h2 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 36px;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .contact-text p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--navy);
+    }
+
+    .contact-info-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 40px rgba(16, 51, 102, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: #333;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(50, 153, 204, 0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 320px;
+      margin-top: 16px;
+    }
+
+    .footer h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--lime);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      font-size: 13px;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--lime);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-visual {
+        max-width: 500px;
+      }
+
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .diensten-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aanpak-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .aanpak-step:nth-child(2)::after {
+        display: none;
+      }
+
+      .waarom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        gap: 16px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 120px 24px 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 30px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .aanpak-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .aanpak-step::after {
+        display: none;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* ── ANIMATIONS ── */
+
+    /* Base states for animated elements */
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .animate-fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .animate-fade-in.is-visible {
+      opacity: 1;
+    }
+
+    .animate-fade-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .animate-fade-left.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .animate-fade-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .animate-fade-right.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .animate-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .animate-scale.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Stagger delays for grid children */
+    .stagger-children .animate-fade-up:nth-child(1) { transition-delay: 0ms; }
+    .stagger-children .animate-fade-up:nth-child(2) { transition-delay: 120ms; }
+    .stagger-children .animate-fade-up:nth-child(3) { transition-delay: 240ms; }
+    .stagger-children .animate-fade-up:nth-child(4) { transition-delay: 360ms; }
+
+    /* Hero entrance animations (play on load, not scroll) */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes heroBadgeFade {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content h1 {
+      animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+    }
+
+    .hero-content .subtitle {
+      animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+    }
+
+    .hero-content p {
+      animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+    }
+
+    .hero-content .cta-area {
+      animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+    }
+
+    .hero-visual {
+      animation: heroFadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+    }
+
+    .trust-badge:nth-child(1) { animation: heroBadgeFade 0.5s ease 0.7s both; }
+    .trust-badge:nth-child(2) { animation: heroBadgeFade 0.5s ease 0.85s both; }
+    .trust-badge:nth-child(3) { animation: heroBadgeFade 0.5s ease 1.0s both; }
+
+    /* Header entrance */
+    @keyframes headerSlideDown {
+      from { opacity: 0; transform: translateY(-100%); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      animation: headerSlideDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* Button hover pulse */
+    .btn-primary:hover {
+      animation: nonexistent; /* override to prevent conflict */
+    }
+
+    /* Step number count-up feel */
+    .aanpak-step.is-visible .step-number {
+      animation: heroFadeIn 0.5s ease both;
+    }
+
+    /* Smooth hover on dienst cards */
+    .dienst-card {
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .animate-fade-up,
+      .animate-fade-in,
+      .animate-fade-left,
+      .animate-fade-right,
+      .animate-scale {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="Frisia Pensioen Advies" class="logo-img">
+      </a>
+      <nav id="nav">
+        <a href="#diensten">Pensioenregeling</a>
+        <a href="#aanpak">Aanpak</a>
+        <a href="#waarom">Over Frisia</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu openen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Pensioenregeling<br>goed geregeld.</h1>
+        <p class="subtitle">No-nonsens, toekomstgericht en helder pensioenadvies.</p>
+        <p>Als ondernemer weet je hoe belangrijk een goede pensioenregeling is voor je medewerkers. Tegelijkertijd kan het organiseren ervan ingewikkeld en tijdrovend zijn.</p>
+        <p>Frisia helpt werkgevers bij het opzetten, verbeteren en beheren van een pensioenregeling voor hun personeel. Duidelijk, overzichtelijk en goed geregeld.</p>
+        <div class="cta-area">
+          <div>
+            <a href="#contact" class="btn btn-primary btn-large">Plan een vrijblijvend gesprek &rarr;</a>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-badge"><span class="dot"></span> 150+ werkgevers begeleid</div>
+            <div class="trust-badge"><span class="dot"></span> No-nonsens advies</div>
+            <div class="trust-badge"><span class="dot"></span> Actief in heel Nederland</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="img/hero-image.png" alt="Zakelijk pensioenadvies" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEEM & OPLOSSING -->
+  <section class="problem-section" id="probleem">
+    <div class="section-inner">
+      <div class="section-label animate-fade-up">Waarom pensioenadvies?</div>
+      <div class="problem-grid stagger-children">
+        <div class="problem-card animate-fade-up">
+          <h3>De uitdaging</h3>
+          <p>Een pensioenregeling is belangrijk voor je medewerkers en voor de toekomst van je organisatie. Maar wet- en regelgeving verandert voortdurend en de keuzes zijn niet altijd eenvoudig.</p>
+        </div>
+        <div class="solution-card animate-fade-up">
+          <h3>De oplossing</h3>
+          <p>Frisia helpt werkgevers bij het opzetten, verbeteren en beheren van een pensioenregeling voor hun medewerkers. Na een kennismaking ontvang je drie duidelijke voorstellen. Zo kun je eenvoudig vergelijken en bepalen wat het beste past bij jouw organisatie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="diensten-section" id="diensten">
+    <div class="section-inner">
+      <div class="section-label animate-fade-up">Onze diensten</div>
+      <h2 class="section-title animate-fade-up">Wat we voor je doen</h2>
+      <p class="section-subtitle animate-fade-up">Van eerste oriëntatie tot doorlopend beheer: wij begeleiden je bij elke stap.</p>
+      <div class="diensten-grid stagger-children">
+        <div class="dienst-card animate-fade-up">
+          <div class="dienst-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3>Is een pensioenregeling verplicht?</h3>
+          <p>We onderzoeken of er sprake is van een verplichtstelling via cao of bedrijfstakpensioenfonds.</p>
+        </div>
+        <div class="dienst-card animate-fade-up">
+          <div class="dienst-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Pensioenregeling opzetten of verbeteren</h3>
+          <p>Wij zorgen dat de regeling past bij jouw organisatie en groeifase.</p>
+        </div>
+        <div class="dienst-card animate-fade-up">
+          <div class="dienst-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          </div>
+          <h3>Drie voorstellen, jij beslist</h3>
+          <p>Na kennismaking ontvang je drie voorstellen. Zodat je zelf kunt vergelijken en beslissen wat past.</p>
+        </div>
+        <div class="dienst-card animate-fade-up">
+          <div class="dienst-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Doorlopend beheer</h3>
+          <p>Wij blijven betrokken bij mutaties, wetswijzigingen en medewerkersvragen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONZE AANPAK -->
+  <section class="aanpak-section" id="aanpak">
+    <div class="section-inner">
+      <div class="section-label animate-fade-up">Onze aanpak</div>
+      <h2 class="section-title animate-fade-up">In vier stappen duidelijkheid</h2>
+      <p class="section-subtitle animate-fade-up">Onze aanpak is ontwikkeld voor ondernemers die snel duidelijkheid willen.</p>
+      <div class="aanpak-steps stagger-children">
+        <div class="aanpak-step animate-fade-up">
+          <div class="step-number">1</div>
+          <h3>Kennismaking</h3>
+          <p>We bespreken je organisatie en wensen.</p>
+        </div>
+        <div class="aanpak-step animate-fade-up">
+          <div class="step-number">2</div>
+          <h3>Analyse</h3>
+          <p>We toetsen of er een verplichtstelling geldt en brengen kosten, risico's en mogelijkheden overzichtelijk in kaart.</p>
+        </div>
+        <div class="aanpak-step animate-fade-up">
+          <div class="step-number">3</div>
+          <h3>Advies</h3>
+          <p>Je ontvangt een duidelijk voorstel zonder vakjargon: helder, transparant en toekomstgericht.</p>
+        </div>
+        <div class="aanpak-step animate-fade-up">
+          <div class="step-number">4</div>
+          <h3>Beheer</h3>
+          <p>Bij aanpassingen leggen we helder uit wat er verandert en begeleiden we de implementatie binnen je organisatie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM FRISIA -->
+  <section class="waarom-section" id="waarom">
+    <div class="section-inner">
+      <div class="waarom-grid">
+        <div class="animate-fade-left">
+          <div class="section-label">Waarom Frisia</div>
+          <h2 class="section-title">Pensioenkennis met ondernemersmentaliteit</h2>
+          <p class="section-subtitle">Frisia Pensioenadvies combineert actuele pensioenkennis met een ondernemersmentaliteit. Wij spreken de taal van directies, HR en medewerkers.</p>
+          <div class="waarom-usps">
+            <div class="usp-item">
+              <div class="usp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3299cc" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <h3>Proactief</h3>
+                <p>Wij signaleren veranderingen voordat het een vraagstuk wordt.</p>
+              </div>
+            </div>
+            <div class="usp-item">
+              <div class="usp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3299cc" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h3>Vertrouwd</h3>
+                <p>Heldere afspraken en transparant advies.</p>
+              </div>
+            </div>
+            <div class="usp-item">
+              <div class="usp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3299cc" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <div>
+                <h3>Informeel</h3>
+                <p>Geen stropdastaal, maar duidelijke uitleg en korte lijnen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="waarom-facts animate-fade-right">
+          <h4 style="font-family: var(--font-heading); font-weight: 600; font-size: 18px; color: white; margin-bottom: 24px;">Frisia in het kort</h4>
+          <div class="fact-item">
+            <div class="fact-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#d6e264" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span>Geschikt voor organisaties van 10 tot 250+ medewerkers</span>
+          </div>
+          <div class="fact-item">
+            <div class="fact-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#d6e264" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span>Doorlopende begeleiding</span>
+          </div>
+          <div class="fact-item">
+            <div class="fact-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#d6e264" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span>Landelijk actief</span>
+          </div>
+          <div class="fact-item">
+            <div class="fact-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#d6e264" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span>150+ werkgevers begeleid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVERSIEBLOK -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-text animate-fade-left">
+        <div class="section-label">Contact</div>
+        <h2>Pensioen goed geregeld?<br>Laten we kennismaken.</h2>
+        <p>Een vrijblijvend gesprek geeft direct duidelijkheid. Binnen één werkdag reactie.</p>
+        <div style="margin-top: 32px;">
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            06 21 98 00 91
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            www.frisiapensioenadvies.nl
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Vestiging Friesland
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-card animate-fade-right">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+            </div>
+            <div class="form-group">
+              <label for="bedrijf">Bedrijfsnaam</label>
+              <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="medewerkers">Aantal medewerkers</label>
+              <select id="medewerkers" name="medewerkers">
+                <option value="">Selecteer...</option>
+                <option value="1-10">1 - 10</option>
+                <option value="10-50">10 - 50</option>
+                <option value="50-100">50 - 100</option>
+                <option value="100-250">100 - 250</option>
+                <option value="250+">250+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="06 12345678">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
+          </div>
+          <div class="form-group">
+            <label for="bericht">Bericht</label>
+            <textarea id="bericht" name="bericht" placeholder="Waar kunnen we u mee helpen?"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-large">Plan mijn adviesgesprek &rarr;</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="img/logo.png" alt="Frisia Pensioen Advies" class="footer-logo">
+          <p>Helder pensioenadvies voor werkgevers in heel Nederland.</p>
+        </div>
+        <div>
+          <h4>Navigatie</h4>
+          <ul class="footer-links">
+            <li><a href="#diensten">Pensioenregeling</a></li>
+            <li><a href="#aanpak">Onze aanpak</a></li>
+            <li><a href="#waarom">Over Frisia</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:0621980091">06 21 98 00 91</a></li>
+            <li><a href="#">info@frisiapensioenadvies.nl</a></li>
+            <li><a href="#">Vestiging Friesland</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Frisia Pensioenadvies</span>
+        <div class="footer-legal">
+          <a href="#">KvK</a>
+          <a href="#">AFM-registratie</a>
+          <a href="#">Privacyverklaring</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+
+    // Simple form handling
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Bedankt voor uw bericht! We nemen binnen één werkdag contact met u op.');
+    });
+
+    // Scroll-triggered animations with Intersection Observer
+    const animatedElements = document.querySelectorAll(
+      '.animate-fade-up, .animate-fade-in, .animate-fade-left, .animate-fade-right, .animate-scale'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // animate only once
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
