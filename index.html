@@ -24,6 +24,7 @@
       --gradient: radial-gradient(circle at 40% 40%, #419bd8, #327bb5, #103366);
       --font-heading: 'Poppins', sans-serif;
       --font-body: 'Open Sans', sans-serif;
+      --section-spacing: 80px;
     }
 
     html {
@@ -191,24 +192,10 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 140px 24px 80px;
+      padding: calc(60px + var(--section-spacing)) 24px var(--section-spacing);
       background: var(--cream);
       position: relative;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -120px;
-      transform: translateY(-50%);
-      width: 500px;
-      height: 500px;
-      background: url('img/Sublogo.svg') no-repeat center;
-      background-size: contain;
-      opacity: 0.04;
-      pointer-events: none;
     }
 
     .hero::after {
@@ -303,7 +290,7 @@
 
     /* ── SECTION DEFAULTS ── */
     section {
-      padding: 80px 24px;
+      padding: var(--section-spacing) 24px;
     }
 
     .section-inner {
@@ -554,21 +541,6 @@
     .waarom-section {
       background: var(--navy);
       color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .waarom-section::before {
-      content: '';
-      position: absolute;
-      bottom: -60px;
-      left: -60px;
-      width: 400px;
-      height: 400px;
-      background: url('img/Sublogo.svg') no-repeat center;
-      background-size: contain;
-      opacity: 0.05;
-      pointer-events: none;
     }
 
     .waarom-section .section-title {
@@ -682,21 +654,6 @@
     /* ── CONVERSIEBLOK ── */
     .contact-section {
       background: var(--cream);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-section::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      right: -80px;
-      width: 350px;
-      height: 350px;
-      background: url('img/Sublogo.svg') no-repeat center;
-      background-size: contain;
-      opacity: 0.04;
-      pointer-events: none;
     }
 
     .contact-inner {
@@ -810,7 +767,7 @@
     .footer {
       background: var(--navy);
       color: rgba(255,255,255,0.65);
-      padding: 60px 24px 32px;
+      padding: var(--section-spacing) 24px 32px;
     }
 
     .footer-inner {
@@ -975,7 +932,7 @@
       }
 
       .hero {
-        padding: 120px 24px 60px;
+        padding: calc(40px + var(--section-spacing)) 24px var(--section-spacing);
       }
 
       .hero-content h1 {
