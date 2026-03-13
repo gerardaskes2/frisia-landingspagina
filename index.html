@@ -501,6 +501,40 @@
       display: none;
     }
 
+    @keyframes stepEntrance {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 0.32; transform: scale(1); }
+    }
+
+    @keyframes stepPulse {
+      0%, 100% {
+        opacity: 0.32;
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(16, 51, 102, 0.1);
+      }
+      8% {
+        opacity: 1;
+        transform: scale(1.18);
+        box-shadow:
+          0 0 0 10px rgba(65, 155, 216, 0.2),
+          0 0 32px rgba(65, 155, 216, 0.6),
+          0 4px 20px rgba(16, 51, 102, 0.3);
+      }
+      26% {
+        opacity: 1;
+        transform: scale(1.14);
+        box-shadow:
+          0 0 0 7px rgba(65, 155, 216, 0.14),
+          0 0 22px rgba(65, 155, 216, 0.45),
+          0 4px 16px rgba(16, 51, 102, 0.2);
+      }
+      38% {
+        opacity: 0.32;
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(16, 51, 102, 0.1);
+      }
+    }
+
     .step-number {
       width: 72px;
       height: 72px;
@@ -515,13 +549,13 @@
       font-size: 28px;
       color: var(--white);
       border: none;
-      transition: all 0.3s;
-      box-shadow: 0 4px 16px rgba(16, 51, 102, 0.2);
+      opacity: 0;
     }
 
-    .aanpak-step:hover .step-number {
-      transform: scale(1.08);
-      box-shadow: 0 6px 24px rgba(16, 51, 102, 0.3);
+    .aanpak-step:hover .step-number { animation-play-state: paused; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .step-number { animation: none !important; opacity: 1 !important; box-shadow: 0 4px 16px rgba(16,51,102,0.2); }
     }
 
     .aanpak-step h3 {
@@ -1111,9 +1145,26 @@
       animation: none;
     }
 
-    /* Step number count-up feel */
-    .aanpak-step.is-visible .step-number {
-      animation: heroFadeIn 0.5s ease both;
+    /* Step numbers: entrance fade-in + sequential glow loop */
+    .aanpak-step:nth-child(1).is-visible .step-number {
+      animation:
+        stepEntrance 0.4s ease 0s    1 normal both,
+        stepPulse    4s ease-in-out  0.5s infinite normal backwards;
+    }
+    .aanpak-step:nth-child(2).is-visible .step-number {
+      animation:
+        stepEntrance 0.4s ease 0.15s 1 normal both,
+        stepPulse    4s ease-in-out  1.5s infinite normal backwards;
+    }
+    .aanpak-step:nth-child(3).is-visible .step-number {
+      animation:
+        stepEntrance 0.4s ease 0.3s  1 normal both,
+        stepPulse    4s ease-in-out  2.5s infinite normal backwards;
+    }
+    .aanpak-step:nth-child(4).is-visible .step-number {
+      animation:
+        stepEntrance 0.4s ease 0.45s 1 normal both,
+        stepPulse    4s ease-in-out  3.5s infinite normal backwards;
     }
 
     /* Smooth hover on dienst cards */
