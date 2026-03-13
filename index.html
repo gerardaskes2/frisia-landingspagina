@@ -538,6 +538,37 @@
       line-height: 1.7;
     }
 
+    .aanpak-visual {
+      position: relative;
+      overflow: hidden;
+      margin: 56px -24px -160px;
+    }
+
+    .aanpak-visual img {
+      width: 100%;
+      height: 660px;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      opacity: 0.65;
+    }
+
+    .aanpak-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        var(--white) 0%,
+        transparent 20%,
+        transparent 38%,
+        var(--navy) 88%,
+        var(--navy) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
     /* ── WAAROM FRISIA ── */
     .waarom-section {
       background: var(--navy);
@@ -1280,6 +1311,9 @@
           <p>Bij aanpassingen leggen we helder uit wat er verandert en begeleiden we de implementatie binnen je organisatie.</p>
         </div>
       </div>
+    </div>
+    <div class="aanpak-visual animate-scale">
+      <img src="img/hero-image-2.jpg" alt="Kennismakingsgesprek bij Frisia Pensioenadvies">
     </div>
   </section>
 
