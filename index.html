@@ -1525,9 +1525,9 @@ const CMS = {
   content: {},
 
   async init() {
-    // Load content overrides
+    // Load content overrides via public API (cms-data is blocked by .htaccess)
     try {
-      const r = await fetch('cms-data/content.json?t=' + Date.now());
+      const r = await fetch('cms-api.php?action=get-content&t=' + Date.now());
       if (r.ok) this.content = await r.json();
     } catch(e) {}
     this.applyContent();
@@ -1568,7 +1568,7 @@ const CMS = {
 
   async loadForm() {
     try {
-      const r = await fetch('cms-data/form-config.json?t=' + Date.now());
+      const r = await fetch('cms-api.php?action=get-form-public&t=' + Date.now());
       if (!r.ok) return;
       const config = await r.json();
       this.renderForm(config.fields);

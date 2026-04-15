@@ -18,13 +18,28 @@ function respond(array $data, int $status = 200): never {
 // ── Actie ophalen ──
 $action = $_GET['action'] ?? '';
 
-// ── check-auth mag altijd ──
+// ── Publieke endpoints (geen auth vereist) ──
+
 if ($action === 'check-auth') {
     $auth = isset($_SESSION['cms_auth']) && $_SESSION['cms_auth'] === true;
     respond([
         'auth' => $auth,
         'csrf' => $auth ? ($_SESSION['csrf'] ?? '') : ''
     ]);
+}
+
+if ($action === 'get-content') {
+    $file = DATA_DIR . '/content.json';
+    if (!file_exists($file)) respond((object)[]);
+    $data = json_decode(file_get_contents($file), true);
+    respond(is_array($data) ? $data : (object)[]);
+}
+
+if ($action === 'get-form-public') {
+    $file = DATA_DIR . '/form-config.json';
+    if (!file_exists($file)) respond(['fields' => []]);
+    $data = json_decode(file_get_contents($file), true);
+    respond(is_array($data) ? $data : ['fields' => []]);
 }
 
 // ── Alle andere endpoints: auth vereist ──
