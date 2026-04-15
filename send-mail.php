@@ -2,7 +2,8 @@
 // ── Frisia Pensioenadvies – Contactformulier handler ──
 
 // Configuratie
-$to_email    = 'gerardaskes@gmail.com';
+$settings = json_decode(file_get_contents(__DIR__ . '/cms-data/settings.json'), true);
+$to_email    = filter_var($settings['mail_to'] ?? 'gerardaskes@gmail.com', FILTER_SANITIZE_EMAIL);
 $from_domain = 'frisiapensioenadvies.nl';
 
 // Alleen POST-verzoeken toestaan

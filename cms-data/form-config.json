@@ -1,0 +1,11 @@
+{
+  "fields": [
+    {"id": "naam", "label": "Naam", "type": "text", "placeholder": "Uw naam", "required": true, "width": "half"},
+    {"id": "bedrijf", "label": "Bedrijfsnaam", "type": "text", "placeholder": "Uw bedrijf", "required": false, "width": "half"},
+    {"id": "medewerkers", "label": "Aantal medewerkers", "type": "select", "options": ["1-10", "11-50", "51-100", "101-250", "250+"], "required": false, "width": "half"},
+    {"id": "telefoon", "label": "Telefoonnummer", "type": "tel", "placeholder": "06 12345678", "required": false, "width": "half"},
+    {"id": "email", "label": "E-mailadres", "type": "email", "placeholder": "uw@email.nl", "required": true, "width": "full"},
+    {"id": "bericht", "label": "Bericht (optioneel)", "type": "textarea", "placeholder": "Waar kan ik u mee helpen?", "required": false, "width": "full"},
+    {"id": "website_url", "label": "", "type": "honeypot", "placeholder": "", "required": false, "width": "full"}
+  ]
+}
