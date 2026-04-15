@@ -12,6 +12,7 @@
     gtag('config', 'G-1G0LQSQQRK');
   </script>
   <title>Privacyverklaring – Frisia Pensioen Advies</title>
+  <meta name="description" content="Privacyverklaring van Frisia Pensioen Advies. Lees hoe wij omgaan met uw persoonsgegevens.">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +22,8 @@
     :root {
       --navy: #103366;
       --blue: #3299cc;
-      --lime: #d6e264;
       --cream: #ecece4;
       --white: #ffffff;
-      --gradient: radial-gradient(circle at 40% 40%, #419bd8, #327bb5, #103366);
       --font-heading: 'Poppins', sans-serif;
       --font-body: 'Open Sans', sans-serif;
     }
@@ -45,51 +44,94 @@
     }
     .logo { display: flex; align-items: center; text-decoration: none; }
     .logo-img { height: 52px; width: auto; }
+    .back-link {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 1; }
+
+    /* HERO BANNER */
+    .page-banner {
+      background: var(--navy);
+      padding: 56px 24px 48px;
+    }
+    .page-banner-inner { max-width: 780px; margin: 0 auto; }
+    .page-banner h1 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 32px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .page-banner p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+    }
 
     /* CONTENT */
     .privacy-wrap {
       max-width: 780px;
       margin: 0 auto;
-      padding: 64px 24px 96px;
+      padding: 56px 24px 96px;
     }
-    .privacy-wrap h1 {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 36px;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .privacy-wrap .intro-meta {
-      font-size: 14px;
-      color: #888;
+    .privacy-intro {
+      font-size: 16px;
+      color: #555;
       margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(16,51,102,0.08);
     }
     .privacy-wrap h2 {
       font-family: var(--font-heading);
       font-weight: 600;
-      font-size: 20px;
+      font-size: 18px;
       color: var(--navy);
       margin-top: 40px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    .privacy-wrap p { margin-bottom: 14px; font-size: 15px; color: #444; }
+    .privacy-wrap p {
+      margin-bottom: 14px;
+      font-size: 15px;
+      color: #444;
+    }
     .privacy-wrap ul {
-      margin: 0 0 14px 20px;
+      margin: 8px 0 16px 20px;
       font-size: 15px;
       color: #444;
     }
     .privacy-wrap ul li { margin-bottom: 6px; }
     .privacy-wrap a { color: var(--blue); text-decoration: underline; }
+    .privacy-wrap strong { color: #333; }
+
+    .contact-block {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 12px;
+      font-size: 15px;
+      color: #444;
+      line-height: 2;
+    }
 
     /* FOOTER */
     .footer {
       background: var(--navy);
-      color: rgba(255,255,255,0.65);
-      padding: 48px 24px 32px;
+      color: rgba(255,255,255,0.55);
+      padding: 40px 24px 28px;
       text-align: center;
       font-size: 14px;
     }
-    .footer a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .footer a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
     .footer a:hover { color: #fff; }
   </style>
 </head>
@@ -100,30 +142,125 @@
       <a href="index.html" class="logo">
         <img src="img/Frisia logo.svg" alt="Frisia Pensioen Advies" class="logo-img">
       </a>
-      <a href="index.html" style="font-family:var(--font-body);font-size:14px;color:var(--navy);text-decoration:none;">&larr; Terug naar de website</a>
+      <a href="index.html" class="back-link">&#8592; Terug naar de website</a>
     </div>
   </header>
 
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <h1>Privacyverklaring</h1>
+      <p>Frisia Pensioen Advies &mdash; Laatst bijgewerkt: 1 april 2026</p>
+    </div>
+  </div>
+
   <main class="privacy-wrap">
-    <h1>Privacyverklaring</h1>
-    <p class="intro-meta">Frisia Pensioen Advies &mdash; Laatste update: april 2025</p>
 
-    <!-- ============================================================
-         INHOUD: WORDT INGEVULD MET DE TEKST UIT DE PDF
-         ============================================================ -->
-
-    <h2>1. Verwerkingsverantwoordelijke</h2>
-    <p><em>Inhoud volgt op basis van de aangeleverde privacyverklaring.</em></p>
-
-    <!-- Placeholder sectie -->
-    <p style="background:#f5f5f0;border-left:4px solid var(--blue);padding:16px 20px;border-radius:0 8px 8px 0;color:#555;font-style:italic;">
-      De volledige tekst van de privacyverklaring wordt hier geplaatst zodra het PDF-document is aangeleverd in de projectmap.
+    <p class="privacy-intro">
+      Frisia Pensioen Advies hecht veel waarde aan de bescherming van persoonsgegevens van klanten,
+      relaties en websitebezoekers. In deze privacyverklaring leggen wij uit welke gegevens wij verwerken,
+      waarom wij dat doen en hoe wij hiermee omgaan.
     </p>
+
+    <h2>1. Wie zijn wij?</h2>
+    <div class="contact-block">
+      Frisia Pensioenadviseurs BV<br>
+      Mejontsmastraat 23<br>
+      9285 RD Buitenpost<br>
+      <a href="mailto:info@frisiapensioenadvies.nl">info@frisiapensioenadvies.nl</a><br>
+      <a href="tel:0627396333">06 27 39 63 33</a><br>
+      KvK: 98610724
+    </div>
+    <p style="margin-top:14px;">Frisia Pensioen Advies is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</p>
+
+    <h2>2. Welke persoonsgegevens verwerken wij?</h2>
+    <p>Wij verwerken persoonsgegevens van (contactpersonen van) bedrijven en organisaties waarmee wij samenwerken of contact hebben. Het gaat om:</p>
+    <ul>
+      <li>Naam en functie</li>
+      <li>Bedrijfsnaam en bedrijfsgegevens</li>
+      <li>Contactgegevens (telefoonnummer en e-mailadres)</li>
+      <li>Gegevens die nodig zijn voor pensioenadvies en dienstverlening</li>
+      <li>Correspondentie en contacthistorie</li>
+      <li>IP-adres en gegevens over gebruik van onze website</li>
+    </ul>
+
+    <h2>3. Waarom verwerken wij deze gegevens?</h2>
+    <p>Wij verwerken persoonsgegevens voor de volgende doeleinden:</p>
+    <ul>
+      <li>Het uitvoeren van pensioenadvies en aanverwante dienstverlening</li>
+      <li>Het opstellen en uitvoeren van overeenkomsten</li>
+      <li>Relatiebeheer en communicatie</li>
+      <li>Het verzenden van nieuwsbrieven en relevante informatie</li>
+      <li>Het voldoen aan wettelijke verplichtingen</li>
+      <li>Het analyseren en verbeteren van onze website en dienstverlening</li>
+    </ul>
+
+    <h2>4. Op basis van welke grondslag?</h2>
+    <p>Wij verwerken persoonsgegevens op basis van:</p>
+    <ul>
+      <li><strong>Uitvoering van een overeenkomst</strong></li>
+      <li><strong>Wettelijke verplichting</strong></li>
+      <li><strong>Gerechtvaardigd belang</strong> (zoals relatiebeheer en het verbeteren van onze dienstverlening)</li>
+      <li><strong>Toestemming</strong> (voor bijvoorbeeld het ontvangen van nieuwsbrieven en cookies)</li>
+    </ul>
+
+    <h2>5. Nieuwsbrief</h2>
+    <p>Wij versturen nieuwsbrieven om relaties en geïnteresseerden te informeren over ontwikkelingen en diensten.</p>
+    <ul>
+      <li>Je ontvangt deze alleen als je je hebt aangemeld of als er sprake is van een bestaande klantrelatie</li>
+      <li>Je kunt je op elk moment afmelden via de afmeldlink in de nieuwsbrief</li>
+    </ul>
+
+    <h2>6. Bewaartermijn</h2>
+    <p>Wij bewaren persoonsgegevens niet langer dan noodzakelijk is voor de doeleinden waarvoor ze zijn verzameld. Daarbij hanteren wij de wettelijke bewaartermijnen, zoals de fiscale bewaarplicht van 7 jaar.</p>
+
+    <h2>7. Delen van persoonsgegevens met derden</h2>
+    <p>Wij delen persoonsgegevens alleen met derden wanneer dit noodzakelijk is voor onze dienstverlening of om te voldoen aan wettelijke verplichtingen.</p>
+    <p>Denk hierbij aan:</p>
+    <ul>
+      <li>Administratieve of boekhoudkundige ondersteuning</li>
+      <li>IT- en hostingpartijen</li>
+      <li>E-mail- en nieuwsbriefdiensten</li>
+      <li>Overheidsinstanties</li>
+    </ul>
+    <p>Met partijen die gegevens verwerken in onze opdracht sluiten wij verwerkersovereenkomsten.</p>
+
+    <h2>8. Cookies en Google Analytics</h2>
+    <p>Onze website maakt gebruik van cookies. Wij gebruiken:</p>
+    <ul>
+      <li><strong>Functionele cookies</strong> – voor het goed functioneren van de website</li>
+      <li><strong>Analytische cookies</strong> – via Google Analytics om inzicht te krijgen in het gebruik van de website</li>
+    </ul>
+    <p>Google Analytics is privacyvriendelijk ingesteld:</p>
+    <ul>
+      <li>IP-adressen worden geanonimiseerd</li>
+      <li>Gegevens worden niet gedeeld voor advertentiedoeleinden</li>
+    </ul>
+    <p>Voor niet-noodzakelijke cookies vragen wij vooraf toestemming.</p>
+
+    <h2>9. Beveiliging</h2>
+    <p>Wij nemen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen verlies of onrechtmatige verwerking.</p>
+
+    <h2>10. Jouw rechten</h2>
+    <p>Je hebt het recht om:</p>
+    <ul>
+      <li>Inzage te krijgen in jouw persoonsgegevens</li>
+      <li>Gegevens te laten corrigeren of verwijderen</li>
+      <li>Bezwaar te maken tegen verwerking</li>
+      <li>Toestemming in te trekken</li>
+      <li>Gegevens over te dragen (dataportabiliteit)</li>
+    </ul>
+    <p>Je kunt hiervoor contact opnemen via de contactgegevens bovenaan deze verklaring.</p>
+
+    <h2>11. Klachten</h2>
+    <p>Heb je een klacht over de verwerking van jouw persoonsgegevens? Dan kun je contact met ons opnemen. Je hebt daarnaast het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens via <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">www.autoriteitpersoonsgegevens.nl</a>.</p>
+
+    <h2>12. Wijzigingen</h2>
+    <p>Wij behouden ons het recht voor om deze privacyverklaring te wijzigen. De meest actuele versie is altijd te vinden op onze website.</p>
 
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Frisia Pensioen Advies &nbsp;|&nbsp; <a href="privacyverklaring.html">Privacyverklaring</a></p>
+    <p>&copy; 2026 Frisia Pensioen Advies &nbsp;&middot;&nbsp; <a href="privacyverklaring.html">Privacyverklaring</a></p>
   </footer>
 
 </body>
