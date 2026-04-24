@@ -413,10 +413,8 @@
       background: var(--cream);
       position: relative;
       padding-top: calc(var(--section-spacing) + 80px);
-      padding-bottom: calc(var(--section-spacing) + 80px);
     }
 
-    /* Bovengolf: wit vanuit hero naar cream */
     .diensten-section::before {
       content: '';
       position: absolute;
@@ -425,18 +423,6 @@
       right: 0;
       height: 80px;
       background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C180,10 360,70 540,50 C720,30 900,70 1080,45 C1260,20 1350,55 1440,35 L1440,0 L0,0 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center top;
-      background-size: cover;
-    }
-
-    /* Ondergolf: navy vanuit cream naar wet2028 — navy zichtbaar tegen cream */
-    .diensten-section::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C180,10 360,70 540,50 C720,30 900,70 1080,45 C1260,20 1350,55 1440,35 L1440,80 L0,80 Z' fill='%23103366'/%3E%3C/svg%3E") no-repeat center bottom;
       background-size: cover;
     }
 
@@ -488,81 +474,6 @@
       font-size: 15px;
       color: #666;
       line-height: 1.7;
-    }
-
-    /* ── WET 2028 SECTIE ── */
-    .wet2028-section {
-      background: var(--navy);
-      color: var(--white);
-      position: relative;
-      padding-top: var(--section-spacing);
-      padding-bottom: 60px;
-    }
-
-    /* Ondergolf: wit (gaat naar aanpak-sectie) */
-    .wet2028-section::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 130px;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 130' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 C200,110 400,50 600,80 C800,110 1050,40 1260,70 C1320,78 1380,82 1440,78 L1440,130 L0,130 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center bottom;
-      background-size: cover;
-    }
-
-    .wet2028-content {
-      max-width: 740px;
-    }
-
-    .wet2028-section h2 {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: clamp(28px, 3.8vw, 48px);
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .wet2028-section p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.82);
-      margin-bottom: 14px;
-      line-height: 1.8;
-    }
-
-    /* Specificer dan .wet2028-section p zodat kleur en grootte niet worden overschreven */
-    .wet2028-section .wet2028-accent {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: clamp(26px, 2.8vw, 36px);
-      color: #dce485;
-      margin-bottom: 28px;
-      line-height: 1.3;
-    }
-
-    .wet2028-cta {
-      margin-top: 36px;
-    }
-
-    .btn-outline-white {
-      display: inline-block;
-      padding: 14px 34px;
-      background: var(--white);
-      border: 2px solid var(--white);
-      border-radius: 8px;
-      color: var(--navy);
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.3px;
-    }
-
-    .btn-outline-white:hover {
-      background: rgba(255,255,255,0.88);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     /* ── AANPAK ── */
@@ -1050,14 +961,6 @@
         grid-template-columns: 1fr;
       }
 
-      .wet2028-section h2 {
-        font-size: 24px;
-      }
-
-      .wet2028-section .wet2028-accent {
-        font-size: 22px;
-      }
-
       .aanpak-steps {
         grid-template-columns: 1fr 1fr;
       }
@@ -1434,22 +1337,6 @@
           </div>
           <h3 data-cms-key="dienst-4-h3">Doorlopend beheer</h3>
           <p data-cms-key="dienst-4-p">Wij blijven betrokken bij mutaties, wetswijzigingen en medewerkersvragen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WET 2028 SECTIE -->
-  <section class="wet2028-section">
-    <div class="section-inner">
-      <div class="wet2028-content">
-        <h2 class="animate-fade-up" data-cms-key="wet2028-title">Is jouw pensioenregeling al klaar voor de nieuwe wetgeving?</h2>
-        <p class="wet2028-accent animate-fade-up" data-cms-key="wet2028-accent">Regel het vóór 2028</p>
-        <p class="animate-fade-up" data-cms-key="wet2028-p1">Uiterlijk 1 januari 2028 moet elke werkgever zijn pensioenregeling aanpassen. Voor veel ondernemers is dat onoverzichtelijk en tijdrovend.</p>
-        <p class="animate-fade-up" data-cms-key="wet2028-p2">Daarom hebben wij een compacte en betaalbare aanpak ontwikkeld, speciaal voor werkgevers die het goed geregeld willen hebben, zonder een uitgebreid adviestraject.</p>
-        <p class="animate-fade-up" data-cms-key="wet2028-p3">Duidelijk, zorgvuldig en volledig volgens de wet.</p>
-        <div class="wet2028-cta animate-fade-up">
-          <a href="#contact" class="btn-outline-white" data-cms-key="wet2028-cta">Vraag vrijblijvend advies aan</a>
         </div>
       </div>
     </div>
