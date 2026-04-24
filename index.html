@@ -482,7 +482,7 @@
       color: var(--white);
       position: relative;
       padding-top: calc(var(--section-spacing) + 80px);
-      padding-bottom: calc(var(--section-spacing) + 80px);
+      padding-bottom: 60px;
     }
 
     /* Bovengolf: cream (komt van diensten-sectie) */
@@ -504,8 +504,8 @@
       bottom: -2px;
       left: 0;
       right: 0;
-      height: 80px;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,45 C240,75 480,15 720,45 C960,75 1200,15 1440,40 L1440,80 L0,80 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center bottom;
+      height: 130px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 130' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 C200,110 400,50 600,80 C800,110 1050,40 1260,70 C1320,78 1380,82 1440,78 L1440,130 L0,130 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center bottom;
       background-size: cover;
     }
 
@@ -516,17 +516,17 @@
     .wet2028-section h2 {
       font-family: var(--font-heading);
       font-weight: 600;
-      font-size: clamp(26px, 3.5vw, 40px);
+      font-size: clamp(28px, 3.8vw, 48px);
       color: var(--white);
-      line-height: 1.25;
+      line-height: 1.2;
       margin-bottom: 20px;
     }
 
     .wet2028-accent {
       font-family: var(--font-heading);
       font-weight: 600;
-      font-size: clamp(20px, 2.5vw, 28px);
-      color: var(--lime);
+      font-size: clamp(26px, 2.8vw, 36px);
+      color: #dce485;
       margin-bottom: 28px;
     }
 
@@ -544,27 +544,26 @@
     .btn-outline-white {
       display: inline-block;
       padding: 14px 34px;
-      border: 2px solid rgba(255,255,255,0.85);
+      background: var(--white);
+      border: 2px solid var(--white);
       border-radius: 8px;
-      color: var(--white);
+      color: var(--navy);
       font-family: var(--font-heading);
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       letter-spacing: 0.3px;
     }
 
     .btn-outline-white:hover {
-      background: var(--white);
-      color: var(--navy);
-      border-color: var(--white);
+      background: rgba(255,255,255,0.88);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     /* ── AANPAK ── */
     .aanpak-section {
       background: var(--white);
-      padding-top: calc(var(--section-spacing) + 80px);
     }
 
     .aanpak-steps {
