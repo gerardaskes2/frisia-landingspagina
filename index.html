@@ -522,19 +522,21 @@
       margin-bottom: 20px;
     }
 
-    .wet2028-accent {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: clamp(26px, 2.8vw, 36px);
-      color: #dce485;
-      margin-bottom: 28px;
-    }
-
     .wet2028-section p {
       font-size: 16px;
       color: rgba(255,255,255,0.82);
       margin-bottom: 14px;
       line-height: 1.8;
+    }
+
+    /* Specificer dan .wet2028-section p zodat kleur en grootte niet worden overschreven */
+    .wet2028-section .wet2028-accent {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: clamp(26px, 2.8vw, 36px);
+      color: #dce485;
+      margin-bottom: 28px;
+      line-height: 1.3;
     }
 
     .wet2028-cta {
@@ -1050,8 +1052,8 @@
         font-size: 24px;
       }
 
-      .wet2028-accent {
-        font-size: 20px;
+      .wet2028-section .wet2028-accent {
+        font-size: 22px;
       }
 
       .aanpak-steps {
