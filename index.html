@@ -413,8 +413,10 @@
       background: var(--cream);
       position: relative;
       padding-top: calc(var(--section-spacing) + 80px);
+      padding-bottom: calc(var(--section-spacing) + 80px);
     }
 
+    /* Bovengolf: wit vanuit hero naar cream */
     .diensten-section::before {
       content: '';
       position: absolute;
@@ -423,6 +425,18 @@
       right: 0;
       height: 80px;
       background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C180,10 360,70 540,50 C720,30 900,70 1080,45 C1260,20 1350,55 1440,35 L1440,0 L0,0 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat center top;
+      background-size: cover;
+    }
+
+    /* Ondergolf: navy vanuit cream naar wet2028 — navy zichtbaar tegen cream */
+    .diensten-section::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C180,10 360,70 540,50 C720,30 900,70 1080,45 C1260,20 1350,55 1440,35 L1440,80 L0,80 Z' fill='%23103366'/%3E%3C/svg%3E") no-repeat center bottom;
       background-size: cover;
     }
 
@@ -481,20 +495,8 @@
       background: var(--navy);
       color: var(--white);
       position: relative;
-      padding-top: calc(var(--section-spacing) + 80px);
+      padding-top: var(--section-spacing);
       padding-bottom: 60px;
-    }
-
-    /* Bovengolf: cream (komt van diensten-sectie) */
-    .wet2028-section::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C180,10 360,70 540,50 C720,30 900,70 1080,45 C1260,20 1350,55 1440,35 L1440,0 L0,0 Z' fill='%23ecece4'/%3E%3C/svg%3E") no-repeat center top;
-      background-size: cover;
     }
 
     /* Ondergolf: wit (gaat naar aanpak-sectie) */
